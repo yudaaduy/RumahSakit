@@ -1,4 +1,12 @@
+public class Ruang extends BendaMati{
+	int NoRuang;
+	int Status;
 
-public class Ruang {
-
+public void Kosong (int Status, int NoRuang){
+	if (Status == 0){
+		System.out.print("Ruangan kosong");
+	}else{
+		System.out.print("Ruangan dipakai");
+	}
+}
 }
