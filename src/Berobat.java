@@ -7,39 +7,21 @@ public class Berobat {
 
 	public void pergiBerobat(){
 		Pasien yuda = new Pasien();
-		Supir supirGrab = new Supir();
 		BendaMati rumahYuda = new RumahPasien();
-		BendaMati rumahSakit = new TujuanPasien();
-
+		BendaMati rumahSakit = new RumahSakit();
+		rumahYuda.koordinat = 5;
+		rumahSakit.koordinat = 40;
+		yuda.duit = 200;
 		yuda.setLokasi(rumahYuda);
-		rumahYuda.koordinat = 2;
-		rumahSakit.koordinat = 6;
-		RumahSakit tujuan = new RumahSakit(rumahYuda, rumahSakit);
-		RumahSakit pesanan = yuda.perjalanan(tujuan);
-
-		//yuda.perjalanan(rumahSakit)(keRumahSakit);
-		boolean isJalan = yuda.yudaJalan();
-
-
-		if(isJalan){
-			ToyotaAvanza toyotaAvanza = new ToyotaAvanza();
-			yuda.naikAvanza(toyotaAvanza);
-			supirGrab.naikAvanza(toyotaAvanza);
-
-			if (toyotaAvanza.kursi <= 5){
-				int posisiMobil = yuda.jalankeRumahSakit();
-				for (int i=posisiMobil;
-						i < pesanan.lokasiAkhir.koordinat; 
-						i++) {
-					System.out.println("Belum sampai, kurang "+ (pesanan.lokasiAkhir.koordinat - i) + "lagi");
-				}
-				System.out.println("perjalanan sudah selesai");
-			}else {
-				System.out.println("penumpang atau driver kosong");
-			}
+		OrderGrab pesanan = yuda.naikGrab(rumahSakit);
+		Supir supirGrab = new Supir();
+		supirGrab.terimaPesanan(pesanan);
+		boolean isValid = supirGrab.validasiPesanan();
+		if(isValid){
+			System.out.println("sukses");
+			
 		}else{
-//			supirGrab.supirMasihMakan();
-			System.out.println("pesanan invalid");
+			System.out.println("not sukses");
 		}
 	}
 
