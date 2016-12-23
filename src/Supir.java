@@ -1,28 +1,22 @@
 
 public class Supir extends Manusia {
-	MobilJalan grabKerja;
-	TempatMakan tempatMangkal;
+OrderGrab yudaOrderGrab;
 
-	public void setLokasiMangkal(BendaMati lokasiWarteg) {
-		this.tempatMangkal = (TempatMakan) lokasiWarteg;
+	public void terimaPesanan(OrderGrab pesanan) {
+		yudaOrderGrab = pesanan;
 	}
-	public MobilJalan cariMangsa(BendaMati lokasiWarteg) {
-		MobilJalan grabBeroperasi = new MobilJalan(this.tempatMangkal, lokasiWarteg);
-		return grabBeroperasi.perjalananYuda();
+
+	public boolean validasiPesanan() {
+		return yudaOrderGrab.valid;
 	}
-	public boolean grabKerja() {
-		return grabKerja.valid;
-	}
-	public void dapetPenumpang(MobilJalan jemputYuda) {
-		grabKerja = jemputYuda;
-	}
-	public boolean begalYuda() {
-		return grabKerja.valid;
-	}
+
 	public int jalan() {
-		return grabKerja.lokasiAwal.koordinat;
+		return yudaOrderGrab.lokasiAwal.koordinat;
 	}
-	public void begalMales() {
-		grabKerja.valid = false;
+
+	public void tolakPesanan() {
+		yudaOrderGrab.valid = false;
 	}
+	
+
 }
