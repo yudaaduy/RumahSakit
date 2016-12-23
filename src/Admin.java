@@ -3,15 +3,14 @@ public class Admin extends Manusia {
 	Dokter Dokter;
 	Duit Duit;
 
-	public void cekRuangan (Ruang Ruang, Dokter Dokter){
-		if(Pasien.Status == 1){
-			System.out.print("Pasien Dirawat");
-			System.out.print("Ruangan dipakai");
-		}else{
-			System.out.print("Ruangan kosong");
-		}
-		}
+	//public void cekRuangan (Ruang Ruang, Dokter Dokter){
+//		if(Pasien.Status == 1){
+//			System.out.print("Pasien Dirawat");
+//			System.out.print("Ruangan dipakai");
+//		}else{
+//			System.out.print("Ruangan kosong");
+//		}
+//		}
 		
 	}
-}
 
