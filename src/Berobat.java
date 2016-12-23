@@ -1,4 +1,3 @@
-
 public class Berobat {
 
 	public static void main(String[] args) {
@@ -16,8 +15,8 @@ public class Berobat {
 		rumahSakit.koordinat = 4;
 		MobilJalan perjalananYuda = new MobilJalan(rumahYuda, rumahSakit);
 		yuda.setLokasi(rumahYuda);
-		MobilJalan pesanan = yuda.pesanGrab(rumahSakit);
-		yuda.jalanNaikGrab(keRumahSakit);
+		MobilJalan pesanan = yuda.perjalanan(rumahSakit);
+		yuda.perjalanan(rumahSakit)(keRumahSakit);
 		boolean isJalan = yuda.naikGrab();
 		
 		thisisif:

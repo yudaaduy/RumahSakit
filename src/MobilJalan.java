@@ -1,4 +1,3 @@
-
 public class MobilJalan extends BendaMati {
 	BendaMati lokasiAwal;
 	BendaMati lokasiAkhir;

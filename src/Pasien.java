@@ -1,6 +1,6 @@
-
 public class Pasien extends Manusia {
 	MobilJalan keRumahSakit;
+	RumahSakit lokasiRumahSakit;
 	RumahPasien lokasiRumahPasien;
 		
 		public void setLokasi(BendaMati lokasi) {
@@ -25,7 +25,4 @@ public class Pasien extends Manusia {
 		public void pasienSehat() {
 			keRumahSakit.valid = false;
 		}
-	
-	
-	
 }

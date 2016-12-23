@@ -4,5 +4,5 @@ public class RumahSakit extends BendaMati {
 	Pasien Pasien;
 	Ruang Ruang;
 	Apotek Apotek;
-	
+	int Kordinat;
 }
