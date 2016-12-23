@@ -1,37 +1,28 @@
 public class Pasien extends Manusia {
-<<<<<<< HEAD
-	Penyakit Penyakit;
-	String Status;
-	Duit Duit;
-=======
+	MobilJalan keRumahSakit;
 	RumahSakit lokasiRumahSakit;
 	RumahPasien lokasiRumahPasien;
 		
 		public void setLokasi(BendaMati lokasi) {
-			this.lokasiRumahpasien = (Rumahpasien) lokasi;
+			this.lokasiRumahPasien = (RumahPasien) lokasi;
 		}
-		public RumahSakit perjalanan(BendaMati rumahSakit) {
-			RumahSakit berobat = new RumahSakit(this.lokasiRumahpasien, lokasiRumahSakit);
-			return berobat.pasienJalan();
+		public MobilJalan perjalanan(BendaMati rumahSakit) {
+			MobilJalan berobat = new MobilJalan(this.lokasiRumahPasien, rumahSakit);
+			return berobat.perjalananYuda();
 		}
-		
 		public boolean pasienJalan() {
-			return pasienJalan.valid;
+			return keRumahSakit.valid;
 		}
-		public void pergiJalan(RumahSakit pasienPergiKeRumahSakit) {
-			pasienBerobat = pasienPergiKeRumahSakit;
+		public void pergiJalan(MobilJalan pasienPergiKeRumahSakit) {
+			keRumahSakit = pasienPergiKeRumahSakit;
 		}
 		public boolean pasienPergiJalan() {
-			return pasienBerobat.valid;
+			return keRumahSakit.valid;
 		}
 		public int jalankeRumahSakit() {
-			return pasienBerobat.lokasiAwal.koordinat;
+			return keRumahSakit.lokasiAwal.koordinat;
 		}
 		public void pasienSehat() {
-			pasienberobat.valid = false;
+			keRumahSakit.valid = false;
 		}
-	
-	
-	
->>>>>>> master
 }
