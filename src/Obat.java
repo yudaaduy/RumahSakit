@@ -1,7 +1,7 @@
 public class Obat extends BendaMati {
-	String NamaObat;
-	int Jumlah;
-	int Harga;
+	String namaObat;
+	int jumlah;
+	int harga;
 
 	public void Statobat(String NamaObat, int Jumlah, int Harga){
 		

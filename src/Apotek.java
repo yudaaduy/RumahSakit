@@ -1,8 +1,8 @@
 public class Apotek {
-	Obat Obat;
+	Obat obat;
 	
-	public void penukaranResep (Obat Obat){
-		
-		
-	}
+public int pembayaran (Ruang ruang, Dokter dokter, int pembayaran){
+	System.out.println(obat.harga * obat.jumlah);
+	return pembayaran;
+}
 }
