@@ -3,6 +3,7 @@ public class Obat extends BendaMati {
 	int Jumlah;
 	int Harga;
 
-public void Statobat(String NamaObat, int Jumlah, int Harga){
-	
+	public void Statobat(String NamaObat, int Jumlah, int Harga){
+		
+	}
 }
