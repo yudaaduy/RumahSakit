@@ -4,6 +4,7 @@ public class Pasien extends Manusia {
 RumahPasien lokasiRumah;
 DuitPasien duitPasien;
 OrderGrab yudaCekDuit;
+boolean isDuidCukup = false;
 
 	public void setLokasi(BendaMati lokasi) {
 		this.lokasiRumah = (RumahPasien) lokasi;
@@ -29,14 +30,13 @@ OrderGrab yudaCekDuit;
 		this.duitPasien  = (DuitPasien) duit;
 	}
 
-	public OrderGrab naikGrab(BendaMati rumahSakit) {
-		OrderGrab pesanan = new OrderGrab(this.lokasiRumah, rumahSakit, rumahSakit);
+	public OrderGrab naikGrab(BendaMati rumahYuda, BendaMati rumahSakit) {
+		OrderGrab pesanan = new OrderGrab(rumahYuda, rumahSakit, rumahSakit);
 		return pesanan.buatPesanan();
 	}
 	
-	public OrderGrab biayaNaikGrab(BendaMati biayaGrab){
-		OrderGrab biaya = new OrderGrab(this.duitPasien, biayaGrab, biayaGrab);
-		return biaya.biayaGrab();
+	public void biayaNaikGrab(BendaMati biayaGrab ,OrderGrab pesanan){
+		this.isDuidCukup = pesanan.isbiayaGrabEnough(biayaGrab);
 	}
 	
 	public static ArrayList<Penyakit> getPasienData(){

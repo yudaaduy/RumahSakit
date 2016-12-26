@@ -19,15 +19,17 @@ public class Berobat {
 		yuda.setLokasi(rumahYuda);
 		yuda.setDuit(duitYuda);
 		
-		OrderGrab pesanan = yuda.naikGrab(rumahSakit);
-		OrderGrab biaya = yuda.biayaNaikGrab(duitYuda);
+		OrderGrab pesanan = yuda.naikGrab(rumahYuda,rumahSakit);	
+		System.out.println("bisa pesan ato ngak : "+ pesanan.valid);
+		
+		yuda.biayaNaikGrab(duitYuda , pesanan);
+		System.out.println("yuda punya duid pa ngak : "+ yuda.isDuidCukup);
 		
 		Supir supirGrab = new Supir();
-		yuda.pesanGrab(biaya);
+		yuda.pesanGrab(pesanan);
+		
 		supirGrab.terimaPesanan(pesanan);
-		
-		
-		
+	
 		
 		boolean isValid = supirGrab.validasiPesanan();
 		boolean isOk = yuda.cekDuitCukupAtauTidak();
@@ -59,7 +61,12 @@ public class Berobat {
 	}
 
 
-	public void berobat(){
-
+//	public void duitBerobat(){
+//		int Benda
+//
+//	}
+//	
+	public int getKembalian(int uang, int kordinatRumah, int kordinatRumahsakit){
+		return uang - (kordinatRumahsakit - kordinatRumah);
 	}
 }

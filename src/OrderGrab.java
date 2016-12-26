@@ -15,29 +15,32 @@ public class OrderGrab {
 	}
 	
 	public OrderGrab buatPesanan(){
-		OrderGrab pesanan = new OrderGrab(this.lokasiAwal, this.lokasiAkhir, this.biayaNaikGrab);
-		if ((lokasiAkhir.koordinat - lokasiAwal.koordinat) > 25){
-			pesanan.valid = false;
+		System.out.println((this.lokasiAkhir.koordinat - this.lokasiAwal.koordinat));
+		if ((this.lokasiAkhir.koordinat - this.lokasiAwal.koordinat) > 25){
+			this.valid = false;
 		} else {
-			pesanan.valid = true;
-			pesanan.orderId = ""+lokasiAkhir.koordinat + lokasiAwal.koordinat;
+			this.valid = true;
+			this.orderId = ""+lokasiAkhir.koordinat + lokasiAwal.koordinat;
 		}
-		return pesanan;
+		return this;
 	}
 	
-	public OrderGrab biayaGrab(){
+	public boolean isbiayaGrabEnough(BendaMati biayaGrab){
 		//OrderGrab coba = new OrderGrab(this.biayaNaikGrab);
-		OrderGrab biaya = new OrderGrab(this.lokasiAwal, this.lokasiAkhir, this.biayaNaikGrab);
+		//OrderGrab biaya = new OrderGrab(this.lokasiAwal, this.lokasiAkhir, this.biayaNaikGrab);
 		
-		System.out.println("lokasiAkhir.koordinat >> " + lokasiAkhir.koordinat);
-		System.out.println("lokasiAwal.koordinat >> " + lokasiAwal.koordinat);
-		System.out.println("biayaNaikGrab.duit >> " + biayaNaikGrab.duit);
+		System.out.println("lokasiAkhir.koordinat >> " + this.lokasiAkhir.koordinat);
+		System.out.println("lokasiAwal.koordinat >> " + this.lokasiAwal.koordinat);
+		System.out.println("biayaNaikGrab.duit >> " + biayaGrab.duit);
 		
-		if ((lokasiAkhir.koordinat - lokasiAwal.koordinat) > biayaNaikGrab.duit){
-			biaya.valid = false;
+		System.out.println("=========================");
+		
+		if ((this.lokasiAkhir.koordinat - this.lokasiAwal.koordinat) > biayaGrab.duit){
+			System.out.println("1");
+			return  false;
 		}else{
-			biaya.valid = true;
+			System.out.println("2");
+			return true;
 		}
-		return biaya;
 	}
 }
