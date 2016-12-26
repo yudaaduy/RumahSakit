@@ -1,5 +1,5 @@
 public class Penyakit {
-	String Flu;
-	String Mag;
-	String Asma;
+	String flu;
+	String mag;
+	String asma;
 }

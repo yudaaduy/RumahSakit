@@ -1,3 +1,5 @@
+import javax.net.ssl.SSLEngineResult.Status;
+
 public class Admin extends Manusia {
 	Ruang ruang;
 	Dokter dokter;
@@ -20,12 +22,12 @@ public void cekRuangan (Ruang ruang, Dokter dokter){
 			System.out.print("Ruangan kosong");
 		}
 	}
-public void cekRuangan (Ruang Ruang, Dokter Dokter){
-		if(Pasien.Status == 1){
-			System.out.print("Pasien Dirawat");
-			System.out.print("Ruangan dipakai");
+public void cekRuangan (Ruang ruang, Dokter dokter){
+		if(ruang.status == 1){
+			System.out.print("Ada Ruangan Kosong");
+			System.out.print("Pasien Bisa Masuk Ruangan");
 		}else{
-			System.out.print("Ruangan kosong");
+			System.out.print("Ruangan Penuh");
 		}
 	}		
 }
