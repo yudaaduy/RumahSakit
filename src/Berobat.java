@@ -5,6 +5,9 @@ public class Berobat {
 	public static void main(String[] args) {
 		Berobat jalan = new Berobat();
 		jalan.pergiBerobat();
+		
+		
+		
 	}
 
 	public void pergiBerobat(){
@@ -26,9 +29,6 @@ public class Berobat {
 		yuda.pesanGrab(biaya);
 		supirGrab.terimaPesanan(pesanan);
 		
-		
-		
-		
 		boolean isValid = supirGrab.validasiPesanan();
 		boolean isOk = yuda.cekDuitCukupAtauTidak();
 		
@@ -36,20 +36,21 @@ public class Berobat {
 			Mobil mobil = new Mobil();
 			supirGrab.naikMobil(mobil);
 			yuda.naikMobil(mobil);
-			if (mobil.kursi <= 3){
-				int posisiMobil = supirGrab.jalan();
-				for (int i=posisiMobil;
-						i < pesanan.lokasiAkhir.koordinat; 
-						i++) {
-					System.out.println("Belum sampai, kurang "+ (pesanan.lokasiAkhir.koordinat - i + " koordinat") + " lagi");
+		if (mobil.kursi <= 3){
+			int posisiMobil = supirGrab.jalan();
+			for (int i=posisiMobil;
+				i < pesanan.lokasiAkhir.koordinat; 
+				i++) {
+				System.out.println("Belum sampai, kurang "+ (pesanan.lokasiAkhir.koordinat - i + " koordinat") + " lagi");
 				}
 				System.out.println("perjalanan sudah selesai");
 				System.out.println("yuda sampai ke rumah sakit");
-				ArrayList<Penyakit> alPasien = Pasien.getPasienData();
-				for(int i = 0;i<alPasien.size();i++){
-					System.out.println("keluhan yuda:" + " " + alPasien.get(i).getPenyakitPasien());
+				ArrayList<Penyakit> alKeluhanPasien = Pasien.getPenyakitPasien();
+				for(int i = 0;i<alKeluhanPasien.size();i++){
+					System.out.println("keluhan yuda:" + " " + alKeluhanPasien.get(i).getPenyakitPasien());
 				}
-			}else {
+				
+		}else {
 		 		System.out.println("supir grab belum sampai");
 			}
 		}else{
@@ -57,7 +58,6 @@ public class Berobat {
 			System.out.println("jarak penumpang ke sopir terlalu jauh");
 		}
 	}
-
 
 	public void berobat(){
 
