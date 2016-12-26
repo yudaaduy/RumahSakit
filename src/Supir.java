@@ -1,6 +1,6 @@
 
 public class Supir extends Manusia {
-OrderGrab yudaOrderGrab;
+	OrderGrab yudaOrderGrab;
 
 	public void terimaPesanan(OrderGrab pesanan) {
 		yudaOrderGrab = pesanan;

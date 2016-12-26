@@ -1,7 +1,8 @@
 
 public class Manusia {
-
-	int duit ;
+	public Mobil naikMobil(Mobil mobil){
+		mobil.kursi = mobil.kursi -1;
+		return mobil;
 	
 	}
-
+}
