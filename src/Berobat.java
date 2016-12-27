@@ -15,6 +15,10 @@ public class Berobat {
 		yuda.orderGrab(grab);
 		int lokasiSupir = 5;
 		Supir yudaJuga = new Supir(lokasiSupir, grab);
+		System.out.println("Posisi rumah yuda: " + rumahYuda);
+		System.out.println("Posisi rumah sakit: "+ rumahSakit);
+		System.out.println("Uang yuda ada " + yuda.uang);
+		
 		boolean isWork = yudaJuga.isOrder;
 		boolean isEnough = yuda.naikGrab;
 		if (isWork && isEnough){
@@ -34,6 +38,8 @@ public class Berobat {
 			}
 			System.out.println("perjalanan selesai");
 			yuda.bayarGrab();
+			System.out.println("Uang yuda setelah bayar grab ada " + yuda.uang);
+			
 			
 		}else{
 			System.out.println("order status: "+yuda.pesanGrab.statusOrder);
