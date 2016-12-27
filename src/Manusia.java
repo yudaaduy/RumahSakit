@@ -1,8 +1,8 @@
 
 public class Manusia {
-	public Mobil naikMobil(Mobil mobil){
+	
+	public Kendaraan naikMobil(Kendaraan mobil){
 		mobil.kursi = mobil.kursi -1;
 		return mobil;
-	
 	}
 }

@@ -1,69 +1,50 @@
 import java.util.ArrayList;
-
 public class Berobat {
 
 	public static void main(String[] args) {
 		Berobat jalan = new Berobat();
-		jalan.pergiBerobat();
-		
-		
-		
-	}
+		jalan.pergiBerobat();	}
 
 	public void pergiBerobat(){
-		
-		Pasien yuda = new Pasien();
-		BendaMati rumahYuda = new RumahPasien();
-		BendaMati rumahSakit = new RumahSakit();
-		BendaMati duitYuda = new DuitPasien();
-		rumahYuda.koordinat = 5;
-		rumahSakit.koordinat = 10;
-		duitYuda.duit = 200;
-		yuda.setLokasi(rumahYuda);
-		yuda.setDuit(duitYuda);
-		
-		OrderGrab pesanan = yuda.naikGrab(rumahYuda,rumahSakit);	
-		System.out.println("bisa pesan ato ngak : "+ pesanan.valid);
-		
-		yuda.biayaNaikGrab(duitYuda , pesanan);
-		System.out.println("yuda punya duid pa ngak : "+ yuda.isDuidCukup);
-		
-		Supir supirGrab = new Supir();
-		yuda.pesanGrab(pesanan);
-		
-		supirGrab.terimaPesanan(pesanan);
-	
-		
-		boolean isValid = supirGrab.validasiPesanan();
-		boolean isOk = yuda.cekDuitCukupAtauTidak();
-		
-		if(isValid && isOk){
-			Mobil mobil = new Mobil();
-			supirGrab.naikMobil(mobil);
-			yuda.naikMobil(mobil);
-		if (mobil.kursi <= 3){
-			int posisiMobil = supirGrab.jalan();
-			for (int i=posisiMobil;
-				i < pesanan.lokasiAkhir.koordinat; 
-				i++) {
-				System.out.println("Belum sampai, kurang "+ (pesanan.lokasiAkhir.koordinat - i + " koordinat") + " lagi");
-				}
-				System.out.println("perjalanan sudah selesai");
-				System.out.println("yuda sampai ke rumah sakit");
-				ArrayList<Penyakit> alKeluhanPasien = Pasien.getPenyakitPasien();
-				for(int i = 0;i<alKeluhanPasien.size();i++){
-					System.out.println("keluhan yuda:" + " " + alKeluhanPasien.get(i).getPenyakitPasien());
-				}
-				
-		}else {
-		 		System.out.println("supir grab belum sampai");
+		int rumahYuda=2;
+		int rumahSakit = 7;
+		int uang = 100;
+		Penumpang yuda = new Penumpang(rumahYuda, rumahSakit, uang);
+		OrderGrab grab = new OrderGrab(rumahYuda, rumahSakit);
+		yuda.estimasiBiaya(grab.getPerkiraanBiaya());
+		yuda.orderGrab(grab);
+		int lokasiSupir = 5;
+		Supir yudaJuga = new Supir(lokasiSupir, grab);
+		boolean isWork = yudaJuga.isOrder;
+		boolean isEnough = yuda.naikGrab;
+		if (isWork && isEnough){
+			Kendaraan mobil = new Kendaraan("Avanza","B021XX", 5);
+			yudaJuga.naikMobil(mobil);
+			for (int z = yudaJuga.posisiDriver; z < yuda.lokasiAwal +1; z++){
+				System.out.println(yuda.lokasiAwal);
 			}
+			System.out.println("Supir tiba di rumah yuda");
+			yuda.naikMobil(mobil);
+			
+			if(mobil.kursi <= 4){
+				for (int i = yuda.lokasiAwal; i < yuda.lokasiAkhir + 1;i++){
+					System.out.println("yuda sekarang berada di"+ " " +i);
+				}
+				System.out.println("yuda sudah sampai di rumah sakit");
+			}
+			System.out.println("perjalanan selesai");
+			yuda.bayarGrab();
+			
 		}else{
-			supirGrab.tolakPesanan();
-			System.out.println("jarak penumpang ke sopir terlalu jauh");
+			System.out.println("order status: "+yuda.pesanGrab.statusOrder);
+		}
+	
+		ArrayList<Pasien> alPasien = KeluhanPasien.getPasienData();
+		
+		for(int i = 0;i<alPasien.size();i++){
+			System.out.println("Keluhan yuda: " +alPasien.get(i).getKeluhan());
 		}
 	}
-
 
 	public void berobat(){
 

@@ -1,46 +1,48 @@
 
 public class OrderGrab {
-	BendaMati lokasiAwal;
-	BendaMati lokasiAkhir;
-	BendaMati biayaNaikGrab;
-	
-	int jarak;
+	int lokasiAwal;
+	int lokasiAkhir;
+	int biayaPerjalanan;
 	String orderId;
-	boolean valid = false;
-	
-	public OrderGrab(BendaMati lokasiAwal, BendaMati lokasiAkhir, BendaMati biayaNaikGrab){
-		this.lokasiAwal = lokasiAwal;
-		this.lokasiAkhir = lokasiAkhir;
-		this.biayaNaikGrab = biayaNaikGrab;
+	String statusOrder;
+	Kendaraan mobil;
+	//---------------------biaya----------------------
+	OrderGrab (int lokasiAwalPenumpang, int lokasiAkhirPenumpang){
+		this.lokasiAwal = lokasiAwalPenumpang;
+		this.lokasiAkhir = lokasiAkhirPenumpang;
+		this.hitungBiayaPerjalanan();
 	}
 	
-	public OrderGrab buatPesanan(){
-		System.out.println((this.lokasiAkhir.koordinat - this.lokasiAwal.koordinat));
-		if ((this.lokasiAkhir.koordinat - this.lokasiAwal.koordinat) > 25){
-			this.valid = false;
-		} else {
-			this.valid = true;
-			this.orderId = ""+lokasiAkhir.koordinat + lokasiAwal.koordinat;
-		}
-		return this;
+	public void hitungBiayaPerjalanan(){
+		this.biayaPerjalanan = lokasiAkhir - lokasiAwal;
 	}
 	
-	public boolean isbiayaGrabEnough(BendaMati biayaGrab){
-		//OrderGrab coba = new OrderGrab(this.biayaNaikGrab);
-		//OrderGrab biaya = new OrderGrab(this.lokasiAwal, this.lokasiAkhir, this.biayaNaikGrab);
-		
-		System.out.println("lokasiAkhir.koordinat >> " + this.lokasiAkhir.koordinat);
-		System.out.println("lokasiAwal.koordinat >> " + this.lokasiAwal.koordinat);
-		System.out.println("biayaNaikGrab.duit >> " + biayaGrab.duit);
-		
-		System.out.println("=========================");
-		
-		if ((this.lokasiAkhir.koordinat - this.lokasiAwal.koordinat) > biayaGrab.duit){
-			System.out.println("1");
-			return  false;
-		}else{
-			System.out.println("2");
-			return true;
-		}
+	public int getPerkiraanBiaya(){
+		return this.biayaPerjalanan;
 	}
+	
+	public int biayaPerjalanan(){
+		return biayaPerjalanan;
+	}
+	
+	public void setBiaya(int biayaPerjalanan) {
+		this.biayaPerjalanan = biayaPerjalanan;
+	}
+	//-------------orderid------------------
+	public String getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
+
+	public String getStatus() {
+		return statusOrder;
+	}
+
+	public void setStatus(String status) {
+		this.statusOrder = status;
+	}
+	
 }
