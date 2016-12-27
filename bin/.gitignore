@@ -1,27 +1,18 @@
-/Manusia.class
-/Dokter.class
-/Apotek.class
-/Ruang.class
-/Admin.class
 /BendaMati.class
+/Berobat.class
+/Dokter.class
 /Duit.class
+/DuitPasien.class
+/KeluhanPasien.class
 /Kendaraan.class
+/Manusia.class
 /Mobil.class
 /Obat.class
-/Pasien.class
-/Penyakit.class
-/Supir.class
-/RumahSakit.class
-<<<<<<< HEAD
-/Berobat.class
-/Pasien/
-=======
-/MobilJalan.class
->>>>>>> master
-<<<<<<< Updated upstream
 /OrderGrab.class
+/Pasien.class
 /Penumpang.class
-/TujuanPasien.class
-=======
-/DuitPasien.class
->>>>>>> Stashed changes
+/Penyakit.class
+/Ruang.class
+/RumahPasien.class
+/RumahSakit.class
+/Supir.class

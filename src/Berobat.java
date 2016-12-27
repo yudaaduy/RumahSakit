@@ -1,9 +1,14 @@
 import java.util.ArrayList;
 public class Berobat {
-
+	Pasien test;
+	
 	public static void main(String[] args) {
 		Berobat jalan = new Berobat();
-		jalan.pergiBerobat();	}
+		jalan.pergiBerobat();
+		
+		System.out.println("");
+		jalan.berobat();
+	}
 
 	public void pergiBerobat(){
 		int rumahYuda=2;
@@ -24,12 +29,13 @@ public class Berobat {
 		if (isWork && isEnough){
 			Kendaraan mobil = new Kendaraan("Avanza","B021XX", 5);
 			yudaJuga.naikMobil(mobil);
-			for (int z = yudaJuga.posisiDriver; z < yuda.lokasiAwal +1; z++){
+			
+			for (int z = yudaJuga.posisiDriver; z < yuda.lokasiAwal; z++){
 				System.out.println(yuda.lokasiAwal);
 			}
 			System.out.println("Supir tiba di rumah yuda");
 			yuda.naikMobil(mobil);
-			
+			System.out.println("yuda menaiki kendaraan:" + mobil.type + " no polisi "+mobil.noPol);
 			if(mobil.kursi <= 4){
 				for (int i = yuda.lokasiAwal; i < yuda.lokasiAkhir + 1;i++){
 					System.out.println("yuda sekarang berada di"+ " " +i);
@@ -39,20 +45,21 @@ public class Berobat {
 			System.out.println("perjalanan selesai");
 			yuda.bayarGrab();
 			System.out.println("Uang yuda setelah bayar grab ada " + yuda.uang);
-			
-			
 		}else{
 			System.out.println("order status: "+yuda.pesanGrab.statusOrder);
 		}
-	
 		ArrayList<Pasien> alPasien = KeluhanPasien.getPasienData();
 		
 		for(int i = 0;i<alPasien.size();i++){
 			System.out.println("Keluhan yuda: " +alPasien.get(i).getKeluhan());
 		}
+		
+		test = new Pasien();
+		test.yuda = yuda;
+		
 	}
 
 	public void berobat(){
-
+		test.print();
 	}
 }
