@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 public class Berobat {
-	Pasien test;
+	Pasien yudaYangSakit;
 	
 	public static void main(String[] args) {
 		Berobat jalan = new Berobat();
 		jalan.pergiBerobat();
 		
-		System.out.println("");
+		//System.out.println("");
 		jalan.berobat();
 	}
 
@@ -31,9 +31,11 @@ public class Berobat {
 			yudaJuga.naikMobil(mobil);
 			
 			for (int z = yudaJuga.posisiDriver; z < yuda.lokasiAwal; z++){
-				System.out.println(yuda.lokasiAwal);
+				System.out.println(z);
 			}
+			
 			System.out.println("Supir tiba di rumah yuda");
+			
 			yuda.naikMobil(mobil);
 			System.out.println("yuda menaiki kendaraan:" + mobil.type + " no polisi "+mobil.noPol);
 			if(mobil.kursi <= 4){
@@ -52,14 +54,20 @@ public class Berobat {
 		
 		for(int i = 0;i<alPasien.size();i++){
 			System.out.println("Keluhan yuda: " +alPasien.get(i).getKeluhan());
+			System.out.println(i);
 		}
 		
-		test = new Pasien();
-		test.yuda = yuda;
+		yudaYangSakit = new Pasien();
+		yudaYangSakit.yuda = yuda;
+		//Penyakit sakit = null;
+		//sakit.iniPenyakit();
+		//System.out.println(sakit);
+		Penyakit prediksiDokter = new Penyakit();
+		prediksiDokter.iniPenyakit();
 		
 	}
 
 	public void berobat(){
-		test.print();
+		//yudaYangSakit.print();
 	}
 }
