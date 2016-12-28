@@ -59,11 +59,11 @@ public class Berobat {
 		
 		yudaYangSakit = new Pasien();
 		yudaYangSakit.yuda = yuda;
-		//Penyakit sakit = null;
-		//sakit.iniPenyakit();
-		//System.out.println(sakit);
+//		Penyakit sakit = null;
+//		sakit.mendugaan();
+//		System.out.println(sakit);
 		Penyakit prediksiDokter = new Penyakit();
-		prediksiDokter.iniPenyakit();
+		prediksiDokter.mendugaan();
 		
 	}
 
