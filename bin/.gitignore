@@ -1,16 +1,19 @@
-/Manusia.class
-/Dokter.class
-/Apotek.class
-/Ruang.class
-/Admin.class
 /BendaMati.class
+/Berobat.class
+/Dokter.class
 /Duit.class
+/DuitPasien.class
+/KeluhanPasien.class
 /Kendaraan.class
+/Manusia.class
 /Mobil.class
 /Obat.class
+/OrderGrab.class
 /Pasien.class
+/Penumpang.class
 /Penyakit.class
-/Supir.class
+/Ruang.class
+/RumahPasien.class
 /RumahSakit.class
 <<<<<<< HEAD
 /Berobat.class
@@ -25,4 +28,3 @@
 =======
 /DuitPasien.class
 >>>>>>> Stashed changes
-/KeluhanPasien.class
