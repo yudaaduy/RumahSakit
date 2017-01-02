@@ -12,13 +12,16 @@ public class Supir extends Manusia {
 	}
 	
 	public void terimaOrderAtauTidak(){
-		if(this.posisiDriver - this.pesanan.lokasiAwal < 10){
+		if(this.posisiDriver - this.pesanan.lokasiAwal >= 10){
+			this.pesanan.setStatus("Order Ditolak Driver");
+			isOrder = false;
+		}else if(this.posisiDriver - this.pesanan.lokasiAwal <= 0){
+			this.pesanan.setStatus("Order Ditolak Driver");
+			isOrder = false;
+		}else {
 			this.pesanan.setStatus("Order Diterima Driver");
 			isOrder = true;
 			this.pesanan.mobil = this.mobil;
-		}else {
-			this.pesanan.setStatus("Order Ditolak Driver");
-			isOrder = false;
 		}
 	}
 }

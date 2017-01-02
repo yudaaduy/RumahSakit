@@ -36,7 +36,7 @@ public class OrderGrab {
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
 	}
-
+	
 	public String getStatus() {
 		return statusOrder;
 	}
