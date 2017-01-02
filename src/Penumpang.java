@@ -31,9 +31,4 @@ public class Penumpang extends Manusia{
 		this.pesanGrab.statusOrder = "sampai di tujuan";
 	}
 	
-	
-
-
-	
-	
 }

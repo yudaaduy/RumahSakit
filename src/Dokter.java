@@ -29,7 +29,13 @@ public class Dokter extends Manusia {
 		
 		return alDbPenyakit;
 	}
- 
+	
+	public void cekKeluhanPasien(){
+		ArrayList<Pasien> alPasien = KeluhanPasien.getPasienData();
+		for(int i = 0;i<alPasien.size();i++){
+		}
+	}
+}
 //	public void periksaPasienRawat(Pasien Pasien, Penyakit Penyakit, String Resep){
 //	    if(Pasien.penyakit){ 
 //	      System.out.print("Resep obat" + Penyakit); 
@@ -57,4 +63,4 @@ public class Dokter extends Manusia {
 //	    } 
 //	  }
 //	}
-}
+
